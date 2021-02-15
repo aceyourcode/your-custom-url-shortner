@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Poppins', sans-serif;
+  background: #040404;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: .4em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bA0a09;
+  border-radius: 6px;
+}
+
+
+.input-box{
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2em;
+
+  padding: 1.2em;
+  height: 100vh;
+  width: 31em;
+
+  label {
+    position: relative;
+  }
+  
+  label input {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    color: #f9f9f9;
+    background: transparent;
+  
+    padding: 1rem 3.2rem 1rem 1.2rem;
+    min-width: 24rem;
+  
+    border-radius: 0.2rem;
+    border: 2px solid #7a7a7a56;
+  
+    transition: border-color 0.2s;
+  }
+  
+  label input:focus {
+    border-color: #ffe;
+  }
+  
+  label p {
+    color: #f9f9f9;
+    font-size: 1rem;
+    user-select: none;
+  
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  
+    margin-left: 0.8rem;
+    padding: 0 0.4rem;
+  
+    background: #040404;
+  
+    transition: top 0.2s, font-size 0.2s, color 0.2s;
+  }
+  
+  
+  
+  label input:focus + p,
+  label input:not(:placeholder-shown) + p {
+    top: 0;
+    font-size: 0.9rem;
+    color: #ffe;
+  }
+  
+  label input:not(:focus) + p {
+    color: #7a7a7a56;
+  }
+
+
+  #wrong-code{
+    position: absolute;
+  
+    color: #ff4754;
+  
+    display: none; /* normal state: flex */
+    align-items: center;
+    justify-content: center;
+  
+    margin-top: 9em;
+    margin-left: -4%;
+  
+     svg{
+      position: absolute;
+   left: -2em;
+    }
+  }
+}
+
+.links{
+  height: 100vh;
+  width: 65em;
+  padding: 1em;
+  color: #f9f9f9;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow:auto;
+  border-right: 3px solid #ffffff;
+  top: 30px;
+  background-color: #008b13;
+
+  h1.info{
+    font-weight:bold;
+    font-size: 3em;
+    
+
+    p{
+      font-size: .5em;
+      font-weight: 400;
+    }
+  }
+
+
+  
+.results {
+  display: block;
+  margin-top: 40px
+}
+
+.result {
+  display: block;
+  background-color: rgba(143, 156, 165, 0.608);
+  padding: 20px;
+  font-size: 25px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #fff;
+  width: 30em;
+  white-space:pre-line;
+  transition: all .3s ease;
+  top: 30px;
+
+  &:hover{
+    font-size: 30px; 
+    animation: heartbeat 1.5s ease-in-out infinite both;
+  }
+ }
+
+.sub {
+  font-size: 13px;
+  mask-type: 10px;
+  opacity: .7;
+
+}
+
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+}
+
+
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  grid-template-rows:  1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "links input-box"
+    "links input-box";
+}
+.links { grid-area: links; }
+.input-box { grid-area: input-box; }
+
+
